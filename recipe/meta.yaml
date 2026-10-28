@@ -1,6 +1,6 @@
 {% set name = "dataeval" %}
-{% set version = "1.1.4" %}
-{% set sha256 = "751394eda65ba205337a1d57cf90568ea762f88e09b0839792ac852ce9cd0d46" %}
+{% set version = "1.1.5" %}
+{% set sha256 = "4747b64fc6b2700cb808b170631f04d5d9063f52f8857715ab2cdc9b19a3a0f0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dataeval-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dataeval-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -23,6 +23,7 @@ requirements:
     - hatch-vcs
     - pip
   run:
+    - torchvision >=0.17.0
     - psutil >=7.0.0
     - lightgbm >=4
     - maite >=0.9.4
